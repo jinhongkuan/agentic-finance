@@ -49,3 +49,7 @@ Every entry uses the same sections, in this order, so entries can be compared si
 1. Create `<Framework>.md` with the sections above.
 2. State the version it covers at the top, and cite a source for every practice that isn't self-evident.
 3. Add a row to **Entries** and to **Section coverage**.
+
+## License
+
+[CC BY 4.0](LICENSE). You may share and adapt this material for any purpose, as long as you credit Jin Hong Kuan and link back to this repository.
