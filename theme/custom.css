@@ -1,0 +1,113 @@
+/* Custom styles for study guides: figures, callouts, dimension cards.
+   Tokens are defined per mdBook theme so inline SVG follows the reader's theme choice. */
+
+html.light, html.rust {
+  --g-accent: #23678f;
+  --g-accent-soft: #e2eef6;
+  --g-rot: #9a6412;
+  --g-rot-bg: #fbf1dd;
+  --g-warn: #a63a2f;
+  --g-warn-bg: #fbe8e4;
+  --g-dim: #c3ccd6;
+  --g-muted: #5d6b7c;
+  --g-surface: #ffffff;
+  --g-line: #d6dde6;
+}
+html.coal, html.navy, html.ayu {
+  --g-accent: #6db4dc;
+  --g-accent-soft: #17303f;
+  --g-rot: #e6b159;
+  --g-rot-bg: #2a2112;
+  --g-warn: #ef8a7c;
+  --g-warn-bg: #3a1f1b;
+  --g-dim: #3a4652;
+  --g-muted: #97a4b3;
+  --g-surface: rgba(255, 255, 255, 0.03);
+  --g-line: #2a333e;
+}
+
+/* Figures */
+figure.fig {
+  margin: 1.4em 0;
+  padding: 18px 16px 12px;
+  background: var(--g-surface);
+  border: 1px solid var(--g-line);
+  border-radius: 4px;
+  overflow-x: auto;
+}
+figure.fig svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  font-size: 12px;
+}
+figure.fig figcaption {
+  font-size: 0.85em;
+  color: var(--g-muted);
+  margin-top: 10px;
+  max-width: 70ch;
+}
+figure.fig svg text { fill: currentColor; }
+figure.fig .mono { font-family: var(--mono-font); font-size: 11px; }
+figure.fig .hd { font-weight: 700; font-size: 13px; }
+figure.fig .st { fill: none; stroke: currentColor; stroke-width: 1.2; }
+figure.fig .ac { fill: var(--g-accent); }
+figure.fig .acs { fill: var(--g-accent-soft); }
+figure.fig .acl { stroke: var(--g-accent); fill: none; stroke-width: 1.6; }
+figure.fig .wa { fill: var(--g-warn); }
+figure.fig .wab { fill: var(--g-warn-bg); }
+figure.fig .wal { stroke: var(--g-warn); fill: none; stroke-width: 1.6; }
+figure.fig .dim { fill: var(--g-dim); }
+figure.fig .dimo { fill: none; stroke: var(--g-dim); stroke-width: 1; }
+figure.fig .dash { stroke-dasharray: 4 3; }
+figure.fig .mu { fill: var(--g-muted); }
+
+/* Callouts: GitHub-style alerts relabelled.
+   [!TIP] reads as "Rule of thumb", [!WARNING] as "Watch out". */
+.blockquote-tag-tip {
+  background: var(--g-rot-bg);
+  border-inline-start-color: var(--g-rot);
+}
+.blockquote-tag-tip .blockquote-tag-title { color: var(--g-rot); }
+.blockquote-tag-warning {
+  background: var(--g-warn-bg);
+  border-inline-start-color: var(--g-warn);
+}
+.blockquote-tag-warning .blockquote-tag-title { color: var(--g-warn); }
+.blockquote-tag-tip .blockquote-tag-title,
+.blockquote-tag-warning .blockquote-tag-title {
+  font-size: 0;
+  font-family: var(--mono-font);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.blockquote-tag-tip .blockquote-tag-title svg,
+.blockquote-tag-warning .blockquote-tag-title svg { font-size: 1rem; }
+.blockquote-tag-tip .blockquote-tag-title::after { content: "Rule of thumb"; font-size: 0.8rem; font-weight: 700; }
+.blockquote-tag-warning .blockquote-tag-title::after { content: "Watch out"; font-size: 0.8rem; font-weight: 700; }
+
+/* Tables: left-aligned and full width, so the key/value tables under each family line up */
+.content table { width: 100%; margin-inline: 0; }
+.content table td:first-child { white-space: nowrap; }
+
+/* Dimension cards */
+.dims {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin: 1.2em 0;
+}
+.dims > div {
+  background: var(--g-surface);
+  border: 1px solid var(--g-line);
+  border-radius: 4px;
+  padding: 12px 14px;
+  min-width: 0;
+}
+.dims b { display: block; margin-bottom: 4px; }
+.dims span { font-size: 0.85em; color: var(--g-muted); }
+.dims em { display: block; font-style: normal; font-size: 0.85em; margin-top: 6px; color: var(--g-accent); }
+
+/* Two-column key/value tables under family headings: hide the empty header row */
+.content table thead tr:has(th:empty) { display: none; }
