@@ -1,8 +1,17 @@
 # Introduction
 
-Personally curated engineering practices, written for code that is **semantically rich, agent-native and maintainable**.
+**What does software engineering entail in the age of AI?**
 
-These are my own opinions, collected from building with each tool, reading how well-regarded projects use it, and the tool's own guidance. They are not official recommendations from any project's authors. Each entry cites the sources it draws on, so you can check the reasoning and disagree with it.
+Agents now write most of the code. That has not made the job easier; it has moved it. I made the argument at length in [Why agentic coding makes the spec problem worse](https://www.bicameral-ai.com/blog/why-agentic-coding-makes-the-spec-problem-worse), and two of its conclusions motivate this collection:
+
+1. **AI accelerated the writing part of coding, not the thinking part.** Deciding what to build is the essential complexity of software, in Fred Brooks's sense, and a spec detailed enough to remove ambiguity is itself code. Swapping the language for English only disguises where the labor lives. So the engineer's job is now mostly judgment: which structure, which trade-off, which invariant.
+2. **The default agentic workflow erodes exactly the things that are hard to demo.** Large diffs get rubber-stamped, context is opaque, and a vibecoded app favors visible features over security, maintainability and performance. The leverage is in making human decisions explicit and putting them where agents and reviewers will read them.
+
+This site is the engineering-side response. Each entry is a set of decisions, already made and justified, that a repository can carry so that an agent, or a person new to the code, inherits them instead of rediscovering them. These are my own opinions, collected from building with each tool, reading how well-regarded projects use it, and the tool's own guidance. They are not official recommendations from any project's authors. Each entry cites its sources, so you can check the reasoning and disagree with it.
+
+## Where the examples come from
+
+The curation leans toward the intersection of **fintech and AI**. Partly that is my own interest. Partly it is because finance is a good stress test for agentic software engineering: the code moves real money, so an invariant that silently breaks has a cost measured in dollars and regulators, while the agents writing that code are prone to confident fabrication. Holding both at once means pushing every practice here to its limit: typed failures instead of strings, uniqueness enforced by the database instead of the application, query plans verified instead of assumed. Practices that survive that setting tend to be worth having everywhere.
 
 ## The ethos
 

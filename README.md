@@ -1,6 +1,6 @@
 # Best practices
 
-Personally curated engineering practices and study guides, written for code that is **semantically rich, agent-native and maintainable**.
+Personally curated engineering practices and study guides, written for code that is **semantically rich, agent-native and maintainable**. The motivation is the question of what software engineering entails once agents write most of the code; see [the introduction](src/introduction.md). Examples lean toward fintech and AI, where real money meets hallucination-prone tooling.
 
 **Read it as a site:** https://jinhongkuan.github.io/best-practices/
 
