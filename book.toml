@@ -1,7 +1,7 @@
 [book]
-title = "Best practices"
+title = "Agentic Finance"
 authors = ["Jin Hong Kuan"]
-description = "Personally curated engineering practices and study guides: maintainability, performance."
+description = "An engineering study guide for software that moves money on someone's behalf: delegated authority, ledgers, LLMs in the money path, and how to prove the state machines underneath are correct."
 language = "en"
 src = "src"
 
@@ -11,8 +11,9 @@ build-dir = "book"
 [output.html]
 default-theme = "light"
 preferred-dark-theme = "navy"
-git-repository-url = "https://github.com/jinhongkuan/best-practices"
-edit-url-template = "https://github.com/jinhongkuan/best-practices/edit/main/{path}"
+git-repository-url = "https://github.com/jinhongkuan/agentic-finance"
+edit-url-template = "https://github.com/jinhongkuan/agentic-finance/edit/main/{path}"
+site-url = "/agentic-finance/"
 additional-css = ["theme/custom.css"]
 
 [output.html.fold]

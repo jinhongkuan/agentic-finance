@@ -1,15 +1,23 @@
-# Best practices
+# Agentic Finance
 
-Personally curated engineering practices and study guides, written for code that is **semantically rich, agent-native and maintainable**. The motivation is the question of what software engineering entails once agents write most of the code; see [the introduction](src/introduction.md). Examples lean toward fintech and AI, where real money meets hallucination-prone tooling.
+> "Software systems have orders of magnitude more states than computers do."
+>
+> Fred Brooks, [*No Silver Bullet: Essence and Accidents of Software Engineering*](https://www.cs.unc.edu/techreports/86-020.pdf) (1986)
 
-**Read it as a site:** https://jinhongkuan.github.io/best-practices/
+**When should you write the code yourself, when should you reach for a formal checker, and when should you hand the work to an agent?** That is the question this guide works on.
 
-| Section | What's in it |
+Brooks called this complexity *essential*: it comes from deciding what the software must do in every one of those states, not from typing it in. As I argued in [Why agentic coding makes the spec problem worse](https://www.bicameral-ai.com/blog/why-agentic-coding-makes-the-spec-problem-worse), coding agents shrink the accidental part and leave the essential part as large as ever.
+
+Study guides and practices for agentic software engineering, in three parts: correctness, maintainability and performance. Agentic finance is my domain of interest and where agentic engineering calls for the most judgment, so most examples come from it, but what is documented here applies to agentic software engineering in general.
+
+**Read it as a site:** https://jinhongkuan.github.io/agentic-finance/
+
+| Part | What's in it |
 |---|---|
-| [Maintainability](src/maintainability/README.md) | Practices by framework, one entry per framework in a fixed eleven-section layout. Currently: [Effect](src/maintainability/effect.md). |
-| [Performance](src/performance/README.md) | Study guides, one per system, sequenced from common cases to rare ones. Currently: [Postgres access patterns](src/performance/postgres.md). |
-
-The introduction, ethos and the layout of each kind of entry are in [`src/introduction.md`](src/introduction.md).
+| [Introduction](src/introduction.md) | The motivation, where the examples come from, and the ethos behind every entry |
+| [Correctness](src/correctness/README.md) | Study guides on executable specifications with Quint: how they differ from code, a practical workflow (including agent-assisted modeling with quint-llm-kit), and three case studies built on real models |
+| [Maintainability](src/maintainability/README.md) | Practices by framework, one entry per framework in a fixed eleven-section layout. Currently: [Effect](src/maintainability/effect.md) |
+| [Performance](src/performance/README.md) | Study guides, one per system, sequenced from common cases to rare ones. Currently: [Postgres access patterns](src/performance/postgres.md) |
 
 ## Running locally
 
@@ -30,7 +38,8 @@ book.toml                 mdBook config
 src/
   SUMMARY.md              sidebar / table of contents
   introduction.md
-  maintainability/        practices reference entries
+  correctness/            study guides: Quint concepts, practice, case studies
+  maintainability/        practices by framework
   performance/            study guides
 theme/custom.css          figures, callouts, dimension cards
 ```
